@@ -9,22 +9,22 @@ export default class Listings extends Component {
   }
   render() {
     return (
-      <section className="listings">
+      <section id="listings">
         <section className="search-area">
           <input type="text" name="search" />
         </section>
 
         <section className="sortby-area">
-          <div>390 results found</div>
+          <div className="results">390 results found</div>
           <div className="sort-options">
             <select name="sortby" className="sortby">
               <option value="price-asc">Highest Price</option>
               <option value="price-dsc">Lowest Price</option>
             </select>
-          </div>
-          <div className="view">
-            <i className="fa fa-th-list" aria-hidden="true" />
-            <i className="fa fa-th" aria-hidden="true" />
+            <div className="view">
+              <i className="fa fa-th-list" aria-hidden="true" />
+              <i className="fa fa-th" aria-hidden="true" />
+            </div>
           </div>
         </section>
 
