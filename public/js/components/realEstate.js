@@ -302,7 +302,151 @@ var Listings = function (_Component) {
       return _react2.default.createElement(
         "section",
         { className: "listings" },
-        "Listings"
+        _react2.default.createElement(
+          "section",
+          { className: "search-area" },
+          _react2.default.createElement("input", { type: "text", name: "search" })
+        ),
+        _react2.default.createElement(
+          "section",
+          { className: "sortby-area" },
+          _react2.default.createElement(
+            "div",
+            null,
+            "390 results found"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "sort-options" },
+            _react2.default.createElement(
+              "select",
+              { name: "sortby", className: "sortby" },
+              _react2.default.createElement(
+                "option",
+                { value: "price-asc" },
+                "Highest Price"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "price-dsc" },
+                "Lowest Price"
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "view" },
+            _react2.default.createElement("i", { className: "fa fa-th-list", "aria-hidden": "true" }),
+            _react2.default.createElement("i", { className: "fa fa-th", "aria-hidden": "true" })
+          )
+        ),
+        _react2.default.createElement(
+          "section",
+          { className: "listings-results" },
+          _react2.default.createElement(
+            "div",
+            { className: "listing" },
+            _react2.default.createElement(
+              "div",
+              { className: "listing-img" },
+              _react2.default.createElement(
+                "span",
+                { className: "address" },
+                "Address"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "details" },
+                _react2.default.createElement("div", { className: "user-img" }),
+                _react2.default.createElement("div", { className: "user-details" }),
+                _react2.default.createElement(
+                  "span",
+                  { className: "user-name" },
+                  "Shimon Jones"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "listing-details" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "floor-space" },
+                  _react2.default.createElement("i", { className: "fa fa-square-o", "aria-hidden": "true" }),
+                  _react2.default.createElement(
+                    "span",
+                    null,
+                    "58 m\xB2"
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "bedrooms" },
+                  _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
+                  _react2.default.createElement(
+                    "span",
+                    null,
+                    "2 bedrooms"
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "bottom-info" },
+              _react2.default.createElement(
+                "span",
+                null,
+                "$1000 /month"
+              ),
+              _react2.default.createElement(
+                "span",
+                null,
+                _react2.default.createElement("i", { className: "fa fa-map-marker", "aria-hidden": "true" }),
+                "Mekor Chaim, JLM"
+              )
+            )
+          )
+        ),
+        _react2.default.createElement("section", { className: "pagination" }),
+        _react2.default.createElement(
+          "ul",
+          { className: "pagination-nums" },
+          _react2.default.createElement(
+            "li",
+            null,
+            "Prev"
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            "1"
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            "2"
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            "3"
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            "4"
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            "5"
+          ),
+          _react2.default.createElement(
+            "li",
+            null,
+            "Next"
+          )
+        )
       );
     }
   }]);
