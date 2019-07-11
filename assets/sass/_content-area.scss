@@ -1,7 +1,6 @@
 #content-area {
   overflow: auto;
   width: 100%;
-  background: black;
   min-height: 100vh;
 }
 
@@ -77,8 +76,9 @@
       background: transparent;
       font-size: 2rem;
       border: none;
-      border-bottom: 2px solid $lightgrey;
+      border-bottom: 1px solid $darkgrey;
       margin-bottom: 20px;
+      font-weight: 100;
       color: $lightgrey;
     }
   }
@@ -87,7 +87,7 @@
 
     .results {
       font-size: 0.8rem;
-      color: $lightgrey;
+      color: $darkgrey;
       display: inline-block;
     }
     .sort-options {
@@ -116,7 +116,6 @@
     margin-bottom: 60px;
     .listing {
       background: #fff;
-      width: 33.33%;
       border-radius: 5px;
       -webkit-box-shadow: 0px 10px 50px -4px rgba(224, 224, 224, 1);
       -moz-box-shadow: 0px 10px 50px -4px rgba(224, 224, 224, 1);
@@ -249,6 +248,19 @@
         }
       }
     }
+    .bottom-info {
+      padding: 20px 15px;
+      .price {
+        font-size: 1rem;
+        display: block;
+        color: $darkgrey;
+      }
+      .location {
+        font-size: 1.2rem;
+        display: block;
+        color: $lightgrey;
+      }
+    }
   }
 }
 
@@ -271,6 +283,7 @@
   width: 25%;
   display: inline-block;
   vertical-align: top;
+  padding: 0 15px;
 }
 
 .col-md-9 {
