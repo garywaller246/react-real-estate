@@ -31,23 +31,32 @@ export default class Listings extends Component {
         <section className="listings-results">
           <div className="listing">
             <div className="listing-img">
-              <span className="address">Address</span>
+              <span className="address">4 Mekor Chaim, Jerusalem</span>
               <div className="details">
-                <div className="user-img" />
-                <div className="user-details" />
-                <span className="user-name">Shimon Jones</span>
-              </div>
-              <div className="listing-details">
-                <div className="floor-space">
-                  <i className="fa fa-square-o" aria-hidden="true" />
-                  <span>58 m&sup2;</span>
+                <div className="col-md-3">
+                  <div className="user-img" />
                 </div>
-                <div className="bedrooms">
-                  <i className="fa fa-bed" aria-hidden="true" />
-                  <span>2 bedrooms</span>
+
+                <div className="col-md-9">
+                  <div className="user-details">
+                    <span className="user-name">Aaron Cohen</span>
+                    <span className="post-date">11/07/2019</span>
+                  </div>
+                  <div className="listing-details">
+                    <div className="floor-space">
+                      <i className="fa fa-square-o" aria-hidden="true" />
+                      <span>58 m&sup2;</span>
+                    </div>
+                  </div>
+                  <div className="bedrooms">
+                    <i className="fa fa-bed" aria-hidden="true" />
+                    <span>2 bedrooms</span>
+                  </div>
+                  <div className="view-btn">View Listing</div>
                 </div>
               </div>
             </div>
+
             <div className="bottom-info">
               <span>$1000 /month</span>
               <span>

@@ -352,40 +352,61 @@ var Listings = function (_Component) {
               _react2.default.createElement(
                 "span",
                 { className: "address" },
-                "Address"
+                "4 Mekor Chaim, Jerusalem"
               ),
               _react2.default.createElement(
                 "div",
                 { className: "details" },
-                _react2.default.createElement("div", { className: "user-img" }),
-                _react2.default.createElement("div", { className: "user-details" }),
-                _react2.default.createElement(
-                  "span",
-                  { className: "user-name" },
-                  "Shimon Jones"
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "listing-details" },
                 _react2.default.createElement(
                   "div",
-                  { className: "floor-space" },
-                  _react2.default.createElement("i", { className: "fa fa-square-o", "aria-hidden": "true" }),
-                  _react2.default.createElement(
-                    "span",
-                    null,
-                    "58 m\xB2"
-                  )
+                  { className: "col-md-3" },
+                  _react2.default.createElement("div", { className: "user-img" })
                 ),
                 _react2.default.createElement(
                   "div",
-                  { className: "bedrooms" },
-                  _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
+                  { className: "col-md-9" },
                   _react2.default.createElement(
-                    "span",
-                    null,
-                    "2 bedrooms"
+                    "div",
+                    { className: "user-details" },
+                    _react2.default.createElement(
+                      "span",
+                      { className: "user-name" },
+                      "Aaron Cohen"
+                    ),
+                    _react2.default.createElement(
+                      "span",
+                      { className: "post-date" },
+                      "11/07/2019"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "listing-details" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "floor-space" },
+                      _react2.default.createElement("i", { className: "fa fa-square-o", "aria-hidden": "true" }),
+                      _react2.default.createElement(
+                        "span",
+                        null,
+                        "58 m\xB2"
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "bedrooms" },
+                    _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
+                    _react2.default.createElement(
+                      "span",
+                      null,
+                      "2 bedrooms"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "view-btn" },
+                    "View Listing"
                   )
                 )
               )
