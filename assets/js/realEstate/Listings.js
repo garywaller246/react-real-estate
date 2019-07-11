@@ -147,16 +147,17 @@ export default class Listings extends Component {
           </div>
         </section>
 
-        <section className="pagination" />
-        <ul className="pagination-nums">
-          <li>Prev</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>Next</li>
-        </ul>
+        <section id="pagination">
+          <ul className="pages">
+            <li>Prev</li>
+            <li className="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>Next</li>
+          </ul>
+        </section>
       </section>
     );
   }

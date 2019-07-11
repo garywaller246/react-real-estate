@@ -608,44 +608,47 @@ var Listings = function (_Component) {
             )
           )
         ),
-        _react2.default.createElement("section", { className: "pagination" }),
         _react2.default.createElement(
-          "ul",
-          { className: "pagination-nums" },
+          "section",
+          { id: "pagination" },
           _react2.default.createElement(
-            "li",
-            null,
-            "Prev"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            "1"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            "2"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            "3"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            "4"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            "5"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            "Next"
+            "ul",
+            { className: "pages" },
+            _react2.default.createElement(
+              "li",
+              null,
+              "Prev"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "active" },
+              "1"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "2"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "3"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "4"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "5"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "Next"
+            )
           )
         )
       );
