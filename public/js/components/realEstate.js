@@ -35,10 +35,64 @@ var Filter = function (_Component) {
     _this.state = {
       name: "Gary"
     };
+    _this.cities = _this.cities.bind(_this);
+    _this.homeTypes = _this.homeTypes.bind(_this);
+    _this.bedrooms = _this.bedrooms.bind(_this);
     return _this;
   }
 
   _createClass(Filter, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.props.populateAction();
+    }
+  }, {
+    key: "cities",
+    value: function cities() {
+      if (this.props.globalState.populateFormsData.cities != undefined) {
+        var cities = this.props.globalState.populateFormsData.cities;
+
+        return cities.map(function (item) {
+          return _react2.default.createElement(
+            "option",
+            { key: item, value: item },
+            item
+          );
+        });
+      }
+    }
+  }, {
+    key: "homeTypes",
+    value: function homeTypes() {
+      if (this.props.globalState.populateFormsData.homeTypes != undefined) {
+        var homeTypes = this.props.globalState.populateFormsData.homeTypes;
+
+        return homeTypes.map(function (item) {
+          return _react2.default.createElement(
+            "option",
+            { key: item, value: item },
+            item
+          );
+        });
+      }
+    }
+  }, {
+    key: "bedrooms",
+    value: function bedrooms() {
+      if (this.props.globalState.populateFormsData.bedrooms != undefined) {
+        var bedrooms = this.props.globalState.populateFormsData.bedrooms;
+
+        return bedrooms.map(function (item) {
+          return _react2.default.createElement(
+            "option",
+            { key: item, value: item },
+            item,
+            "+ BR"
+          );
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -53,45 +107,47 @@ var Filter = function (_Component) {
             "filter"
           ),
           _react2.default.createElement(
-            "select",
-            {
-              name: "neighbourhood",
-              className: "filters neighbourhood",
-              onChange: this.props.change
-            },
-            _react2.default.createElement(
-              "option",
-              { value: "Mekor Chaim" },
-              "Mekor Chaim"
-            ),
-            _react2.default.createElement(
-              "option",
-              { value: "Emek Refaim" },
-              "Emek Refaim"
-            )
+            "label",
+            { htmlFor: "city" },
+            "City"
           ),
           _react2.default.createElement(
             "select",
             {
-              name: "housetype",
-              className: "filters housetype",
+              name: "city",
+              className: "filters city",
               onChange: this.props.change
             },
             _react2.default.createElement(
               "option",
-              { value: "apartment" },
-              "apartment"
+              { value: "All" },
+              "All"
             ),
+            this.cities()
+          ),
+          _react2.default.createElement(
+            "label",
+            { htmlFor: "city" },
+            "Home Type"
+          ),
+          _react2.default.createElement(
+            "select",
+            {
+              name: "homeType",
+              className: "filters homeType",
+              onChange: this.props.change
+            },
             _react2.default.createElement(
               "option",
-              { value: "studio" },
-              "studio"
+              { value: "All" },
+              "All Homes"
             ),
-            _react2.default.createElement(
-              "option",
-              { value: "basement" },
-              "basement"
-            )
+            this.homeTypes()
+          ),
+          _react2.default.createElement(
+            "label",
+            { htmlFor: "city" },
+            "Bedrooms"
           ),
           _react2.default.createElement(
             "select",
@@ -100,26 +156,7 @@ var Filter = function (_Component) {
               className: "filters bedrooms",
               onChange: this.props.change
             },
-            _react2.default.createElement(
-              "option",
-              { value: "1" },
-              "1 BR"
-            ),
-            _react2.default.createElement(
-              "option",
-              { value: "2" },
-              "2 BR"
-            ),
-            _react2.default.createElement(
-              "option",
-              { value: "3" },
-              "3 BR"
-            ),
-            _react2.default.createElement(
-              "option",
-              { value: "4" },
-              "4 BR"
-            )
+            this.bedrooms()
           ),
           _react2.default.createElement(
             "div",
@@ -595,83 +632,83 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var listingsData = [{
-  address: "26 King George",
+  address: "1 King George",
   city: "Jerusalem",
   state: "Jerusalem",
   rooms: 3,
-  price: 2600000,
-  floorspace: 100,
+  price: 1000000,
+  floorSpace: 500,
   extras: ["elevator", "gym"],
   homeType: "Apartment",
   image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
 }, {
-  address: "26 King George",
+  address: "26 Allenby",
+  city: "Tel Aviv",
+  state: "Tel Aviv",
+  rooms: 1,
+  price: 200000,
+  floorSpace: 100,
+  extras: ["elevator"],
+  homeType: "rooftop",
+  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
+}, {
+  address: "18 Main Road",
+  city: "Haifa",
+  state: "Haifa",
+  rooms: 2,
+  price: 600000,
+  floorSpace: 75,
+  extras: ["gym"],
+  homeType: "Basement",
+  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
+}, {
+  address: "1 kibutz way",
+  city: "Kibutz",
+  state: "Kibutz",
+  rooms: 5,
+  price: 100000,
+  floorSpace: 1000,
+  extras: [],
+  homeType: "House",
+  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
+}, {
+  address: "99 The Gush",
+  city: "The Gush",
+  state: "The Gush",
+  rooms: 5,
+  price: 200000,
+  floorSpace: 200,
+  extras: ["gym", "swimming pool", "garden"],
+  homeType: "House",
+  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
+}, {
+  address: "50 Emek Refaim",
   city: "Jerusalem",
   state: "Jerusalem",
-  rooms: 3,
+  rooms: 1,
   price: 2600000,
-  floorspace: 100,
+  floorSpace: 25,
+  extras: ["elevator"],
+  homeType: "Studio",
+  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
+}, {
+  address: "18 Derech Beit Lechem",
+  city: "Jerusalem",
+  state: "Jerusalem",
+  rooms: 2,
+  price: 2000000,
+  floorSpace: 50,
   extras: ["elevator", "gym"],
   homeType: "Apartment",
   image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
 }, {
-  address: "26 King George",
+  address: "101 Derech Hevron",
   city: "Jerusalem",
   state: "Jerusalem",
   rooms: 3,
-  price: 2600000,
-  floorspace: 100,
-  extras: ["elevator", "gym"],
-  homeType: "Apartment",
-  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
-}, {
-  address: "26 King George",
-  city: "Jerusalem",
-  state: "Jerusalem",
-  rooms: 3,
-  price: 2600000,
-  floorspace: 100,
-  extras: ["elevator", "gym"],
-  homeType: "Apartment",
-  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
-}, {
-  address: "26 King George",
-  city: "Jerusalem",
-  state: "Jerusalem",
-  rooms: 3,
-  price: 2600000,
-  floorspace: 100,
-  extras: ["elevator", "gym"],
-  homeType: "Apartment",
-  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
-}, {
-  address: "26 King George",
-  city: "Jerusalem",
-  state: "Jerusalem",
-  rooms: 3,
-  price: 2600000,
-  floorspace: 100,
-  extras: ["elevator", "gym"],
-  homeType: "Apartment",
-  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
-}, {
-  address: "26 King George",
-  city: "Jerusalem",
-  state: "Jerusalem",
-  rooms: 3,
-  price: 2600000,
-  floorspace: 100,
-  extras: ["elevator", "gym"],
-  homeType: "Apartment",
-  image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
-}, {
-  address: "26 King George",
-  city: "Jerusalem",
-  state: "Jerusalem",
-  rooms: 3,
-  price: 2600000,
-  floorspace: 100,
-  extras: ["elevator", "gym"],
+  price: 2000000,
+  floorSpace: 98,
+  extras: ["elevator", "gym", "rooftop"],
   homeType: "Apartment",
   image: "http://www.century21jerusalem.com/wp-content/uploads/2019/04/48af328de0_b38c8bcb56_Front_facade-734x413.jpg"
 }];
@@ -714,6 +751,8 @@ var _listingsData2 = _interopRequireDefault(_listingsData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -733,6 +772,9 @@ var App = function (_Component) {
     _this.state = {
       name: "Gary",
       listingsData: _listingsData2.default,
+      city: "All",
+      homeType: "All",
+      bedrooms: 0,
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -741,10 +783,12 @@ var App = function (_Component) {
       finished_basement: false,
       gym: false,
       swimming_pool: false,
-      filteredData: _listingsData2.default
+      filteredData: _listingsData2.default,
+      populateFormsData: ""
     };
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
+    _this.populateForms = _this.populateForms.bind(_this);
     return _this;
   }
 
@@ -767,11 +811,56 @@ var App = function (_Component) {
       var _this3 = this;
 
       var newData = this.state.listingsData.filter(function (item) {
-        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorspace >= _this3.state.min_floor_space && item.floorspace <= _this3.state.max_floor_space;
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
+
+      if (this.state.city != "All") {
+        newData = newData.filter(function (item) {
+          return item.city == _this3.state.city;
+        });
+      }
+
+      if (this.state.homeType != "All") {
+        newData = newData.filter(function (item) {
+          return item.homeType == _this3.state.homeType;
+        });
+      }
 
       this.setState({
         filteredData: newData
+      });
+    }
+  }, {
+    key: "populateForms",
+    value: function populateForms() {
+      var _this4 = this;
+
+      var cities = this.state.listingsData.map(function (item) {
+        return item.city;
+      });
+      cities = new Set(cities);
+      cities = [].concat(_toConsumableArray(cities));
+
+      var homeTypes = this.state.listingsData.map(function (item) {
+        return item.homeType;
+      });
+      homeTypes = new Set(homeTypes);
+      homeTypes = [].concat(_toConsumableArray(homeTypes));
+
+      var bedrooms = this.state.listingsData.map(function (item) {
+        return item.rooms;
+      });
+      bedrooms = new Set(bedrooms);
+      bedrooms = [].concat(_toConsumableArray(bedrooms));
+
+      this.setState({
+        populateFormsData: {
+          homeTypes: homeTypes,
+          bedrooms: bedrooms,
+          cities: cities
+        }
+      }, function () {
+        console.log(_this4.state);
       });
     }
   }, {
@@ -784,7 +873,11 @@ var App = function (_Component) {
         _react2.default.createElement(
           "section",
           { id: "content-area" },
-          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
+          _react2.default.createElement(_Filter2.default, {
+            change: this.change,
+            globalState: this.state,
+            populateAction: this.populateForms
+          }),
           _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
         )
       );
