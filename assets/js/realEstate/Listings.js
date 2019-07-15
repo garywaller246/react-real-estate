@@ -42,12 +42,12 @@ export default class Listings extends Component {
                     <div className="listing-details">
                       <div className="floor-space">
                         <i className="fa fa-square-o" aria-hidden="true" />
-                        <span>58 m&sup2;</span>
+                        <span>{listing.floorSpace} m&sup2;</span>
                       </div>
                     </div>
                     <div className="bedrooms">
                       <i className="fa fa-bed" aria-hidden="true" />
-                      <span>{listing.bedrooms} bedrooms</span>
+                      <span>{listing.rooms} bedrooms</span>
                     </div>
                     <div className="view-btn">View Listing</div>
                   </div>
@@ -89,12 +89,12 @@ export default class Listings extends Component {
                     <div className="listing-details">
                       <div className="floor-space">
                         <i className="fa fa-square-o" aria-hidden="true" />
-                        <span>58 m&sup2;</span>
+                        <span>{listing.floorSpace} m&sup2;</span>
                       </div>
                     </div>
                     <div className="bedrooms">
                       <i className="fa fa-bed" aria-hidden="true" />
-                      <span>{listing.bedrooms} bedrooms</span>
+                      <span>{listing.rooms} bedrooms</span>
                     </div>
                     <div className="view-btn">View Listing</div>
                   </div>
@@ -118,11 +118,14 @@ export default class Listings extends Component {
     return (
       <section id="listings">
         <section className="search-area">
-          <input type="text" name="search" />
+          <input type="text" name="search" onChange={this.props.change} />
         </section>
 
         <section className="sortby-area">
-          <div className="results">390 results found</div>
+          <div className="results">
+            We have found {this.props.globalState.filteredData.length} results
+            matching your query
+          </div>
           <div className="sort-options">
             <select
               name="sortby"
@@ -147,18 +150,22 @@ export default class Listings extends Component {
           </div>
         </section>
 
-        <section className="listings-results">{this.loopListings()}</section>
+        <section className="listings-results">
+          <div className="row">{this.loopListings()}</div>
+        </section>
 
         <section id="pagination">
-          <ul className="pages">
-            <li>Prev</li>
-            <li className="active">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>Next</li>
-          </ul>
+          <div className="row">
+            <ul className="pages">
+              <li>Prev</li>
+              <li className="active">1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>Next</li>
+            </ul>
+          </div>
         </section>
       </section>
     );
